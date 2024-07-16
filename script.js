@@ -2,8 +2,15 @@
 /*
     Problem: 
  */
-const container = document.querySelector(".container");
 
+const container = document.querySelector(".container");
+const gridSize = document.querySelector("#gridSize");
+
+gridSize.addEventListener("input", (e) => {
+        const sz = e.target.value;
+        boxSize = 800 / sz;
+        generateGrid(sz);
+})
 
 let boxSize = 50;
 let isRandom = false;
@@ -32,20 +39,20 @@ container.addEventListener("mouseover", (e) => {
     }
 })
 
-function userInput() {
-    let gridSize = prompt("please enter the grid size! (<100)");
-    if(gridSize > 100) return userInput();
-    return gridSize;
-}
+// function userInput() {
+//     let gridSize = prompt("please enter the grid size! (<100)");
+//     if(gridSize > 100) return userInput();
+//     return gridSize;
+// }
 
-const btn = document.querySelector("button");
+// const btn = document.querySelector("button");
 
-btn.addEventListener("click", () => {
-    const sz = userInput();
-    boxSize = 800 / sz;
-    generateGrid(sz);
+// btn.addEventListener("click", () => {
+//     const sz = userInput();
+//     boxSize = 800 / sz;
+//     generateGrid(sz);
 
-})
+// })
 
 // random color generator:
 
