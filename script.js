@@ -1,3 +1,7 @@
+
+/*
+    Problem: 
+ */
 const container = document.querySelector(".container");
 
 
@@ -11,7 +15,7 @@ function generateGrid(gridSize) {
     for (let i = 0; i < gridSize ** 2; ++i) {
         const div = document.createElement("div");
         div.setAttribute("class", "item");
-        div.setAttribute("style", `height: ${boxSize}px; width: ${boxSize}px;`);
+        div.setAttribute("style", `height: ${boxSize}px; width: ${boxSize}px; opacity: 1;`);
         container.appendChild(div);
     }
 }
@@ -21,7 +25,11 @@ container.addEventListener("mouseover", (e) => {
 
     const inElement = e.target;
     if (inElement.classList.contains("item"))
+    {
         inElement.style.backgroundColor = generateColor();
+        const currentOpacity = inElement.style.opacity;
+        inElement.style.opacity = currentOpacity - 0.1;
+    }
 })
 
 function userInput() {
