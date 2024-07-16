@@ -23,6 +23,7 @@ container.addEventListener("mouseover", (e) => {
 
 function userInput() {
     let gridSize = prompt("please enter the grid size! (<100)");
+    if(gridSize > 100) return userInput();
     return gridSize;
 }
 
