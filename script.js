@@ -14,8 +14,10 @@ gridSize.addEventListener("input", (e) => {
 
 let boxSize = 50;
 let isRandom = false;
+let enableShading = false;
 const rndmBtn = document.querySelector(".random");
-
+const shadingBtn = document.querySelector(".enable-shading");
+shadingBtn.addEventListener("click", () => enableShading = !enableShading);
 rndmBtn.addEventListener("click", ()=> isRandom = !isRandom);
 function generateGrid(gridSize) {
     container.replaceChildren();
@@ -34,8 +36,11 @@ container.addEventListener("mouseover", (e) => {
     if (inElement.classList.contains("item"))
     {
         inElement.style.backgroundColor = generateColor();
+        if(enableShading)
+        {
         const currentOpacity = inElement.style.opacity;
         inElement.style.opacity = currentOpacity - 0.1;
+        }
     }
 })
 
