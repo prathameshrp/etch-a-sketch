@@ -18,7 +18,7 @@ container.addEventListener("mouseover", (e) => {
 
     const inElement = e.target;
     if (inElement.classList.contains("item"))
-        inElement.style.backgroundColor = "blue";
+        inElement.style.backgroundColor = generateColor();
 })
 
 function userInput() {
@@ -35,3 +35,18 @@ btn.addEventListener("click", () => {
     generateGrid(sz);
 
 })
+
+// random color generator:
+
+function generateColor()
+{
+    const rgbval = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+
+    let prefix = "#";
+    for(let i = 0; i<6; ++i)
+    {
+        let colorIndex = Math.floor(Math.random()*rgbval.length);
+        prefix+=rgbval[colorIndex];
+    }
+    return prefix;
+}
