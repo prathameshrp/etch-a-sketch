@@ -5,11 +5,14 @@
 
 const container = document.querySelector(".container");
 const gridSize = document.querySelector("#gridSize");
+const clear = document.querySelector(".clear");
+
 
 gridSize.addEventListener("input", (e) => {
         const sz = e.target.value;
         boxSize = 800 / sz;
         generateGrid(sz);
+       
 })
 
 let boxSize = 50;
@@ -19,6 +22,11 @@ const rndmBtn = document.querySelector(".random");
 const shadingBtn = document.querySelector(".enable-shading");
 shadingBtn.addEventListener("click", () => enableShading = !enableShading);
 rndmBtn.addEventListener("click", ()=> isRandom = !isRandom);
+clear.addEventListener("click", () =>
+    {
+        boxSize = 50;
+        generateGrid(16);
+    })
 function generateGrid(gridSize) {
     container.replaceChildren();
     for (let i = 0; i < gridSize ** 2; ++i) {
@@ -27,6 +35,8 @@ function generateGrid(gridSize) {
         div.setAttribute("style", `height: ${boxSize}px; width: ${boxSize}px; opacity: 1;`);
         container.appendChild(div);
     }
+
+   
 }
 generateGrid(16);
 container.addEventListener("mouseover", (e) => {
