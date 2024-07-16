@@ -2,7 +2,10 @@ const container = document.querySelector(".container");
 
 
 let boxSize = 50;
+let isRandom = false;
+const rndmBtn = document.querySelector(".random");
 
+rndmBtn.addEventListener("click", ()=> isRandom = !isRandom);
 function generateGrid(gridSize) {
     container.replaceChildren();
     for (let i = 0; i < gridSize ** 2; ++i) {
@@ -40,6 +43,8 @@ btn.addEventListener("click", () => {
 
 function generateColor()
 {
+    if(isRandom)
+    {
     const rgbval = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 
     let prefix = "#";
@@ -49,4 +54,7 @@ function generateColor()
         prefix+=rgbval[colorIndex];
     }
     return prefix;
+    }
+    
+    else return "#FF0000"
 }
