@@ -9,7 +9,8 @@ for(let i = 0; i < 16*16; ++i)
 
 container.addEventListener("mouseover", (e)=>{
     e.stopPropagation();
-    const inElement = e.target;
     
-    inElement.style.backgroundColor = "blue";
+    const inElement = e.target;
+    if(inElement.classList.contains("item"))
+        inElement.style.backgroundColor = "blue";
 })
