@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,71 +9,81 @@
     <script src="./script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header><h1>Etch-A-Sketch</h1></header>
+    <header>
+        <h1>Etch-A-Sketch</h1>
+    </header>
     <div id="playArea">
-      
-    <div class="options">
-        <label for="gridSize">Grid Size = </label>
-        <label id="gridVal" for="gridSize">16x16</label>
-    <input type = "range" class="custom-range" id="gridSize" min="1" max="70"> 
-    <label for="opt">Options</label>
-    
-    <div class="clr-btns" id="opt">
-        <div class="btn-item">
-    <button class="random custom-btns"></button>
-    <span>RGB</span>
-    </div>
-    <div class="btn-item">
-    <button class="enable-shading"></button>
-    <span>Toggle Shading</span>
-    </div>
-    <div class="btn-item">
-    <button class="clear">X</button>
-    <span>Clear</span>
-    </div>
-    </div>
-    
-    <label for="clr">Colors</label>
 
-    <div class="clr-btns" id="clr">
+        <div class="options">
+            <label for="gridSize">Grid Size = </label>
+            <label id="gridVal" for="gridSize">16x16</label>
+            <input type="range" class="custom-range" id="gridSize" min="1" max="70">
+            <label for="opt">Options</label>
+
+            <div class="clr-btns" id="opt">
+                <div class="btn-item">
+                    <button class="random custom-btns"></button>
+                    <span>RGB</span>
+                </div>
+                <div class="btn-item">
+                    <button class="enable-shading"></button>
+                    <span>Toggle Shading</span>
+                </div>
+
+                <div class="btn-item">
+                    <button id="eraser"></button>
+                    <span>Eraser</span>
+                </div>
+
+                <div class="btn-item">
+                    <button class="clear">X</button>
+                    <span>Clear</span>
+                </div>
+            </div>
+
+            <label for="clr">Colors</label>
+
+            <div class="clr-btns" id="clr">
 
 
-        <div class="btn-item">
-            <button id="black" value="#000000"></button>
-            <span>Black</span>
+                <div class="btn-item">
+                    <button id="black" value="#000000"></button>
+                    <span>Black</span>
+                </div>
+
+                <div class="btn-item">
+                    <button id="red" value="#ff0000"></button>
+                    <span>Red</span>
+                </div>
+
+
+                <div class="btn-item">
+                    <button id="green" value="#00ff00"></button>
+                    <span>Green</span>
+                </div>
+
+
+                <div class="btn-item">
+                    <button id="blue" value="#0000ff"></button>
+                    <span>Blue</span>
+                </div>
+
+
+                <div class="btn-item">
+                    <button id="yellow" value="#ffff00"></button>
+                    <span>Yellow</span>
+                </div>
+            </div>
         </div>
+        <div class="container">
 
-        <div class="btn-item">
-            <button id="red" value="#ff0000"></button>
-            <span>Red</span>
+
         </div>
-
-
-        <div class="btn-item">
-            <button id="green" value="#00ff00"></button>
-            <span>Green</span>
-        </div>
-
-
-        <div class="btn-item">
-            <button id="blue" value="#0000ff"></button>
-            <span>Blue</span>
-        </div>
-
-
-        <div class="btn-item">
-            <button id="yellow" value="#ffff00"></button>
-            <span>Yellow</span>
-        </div>
-    </div>
-</div>
-    <div class="container">
-  
-
-    </div>
 
     </div>
 </body>
+
 </html>
