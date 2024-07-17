@@ -7,7 +7,7 @@ const container = document.querySelector(".container"); //get grid element to pe
 const gridSize = document.querySelector("#gridSize"); //get input to access changed grid value
 const gridVal = document.querySelector("#gridVal"); //get label to display changed grid value
 
-let boxSize = 50; //default div size in px
+let boxSize = 750/16; //default div size in px
 let enableShading = false; //progressive darkening effect
 let isRandom = false; // rgb color button
 let choosen_bg = "#000"; //default color chosen 
@@ -17,7 +17,7 @@ generateGrid(16); //default grid generation
 gridSize.addEventListener("input", (e) => {
     const sz = e.target.value;
     gridVal.textContent = `${sz}x${sz}`;
-    boxSize = 800 / sz;
+    boxSize = 750 / sz;
     generateGrid(sz);
 
 })
@@ -61,7 +61,7 @@ eraser.addEventListener("click", (e) => {
 const clear = document.querySelector(".clear");
 
 clear.addEventListener("click", () => {
-    boxSize = 50;
+    boxSize = 750/16;
     generateGrid(16);
 })
 
