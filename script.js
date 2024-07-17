@@ -7,6 +7,17 @@ const container = document.querySelector(".container");
 const gridSize = document.querySelector("#gridSize");
 const clear = document.querySelector(".clear");
 
+const clr = document.querySelector("#clr");
+
+
+let choosen_bg = "#000";
+clr.addEventListener("click", (e)=>
+{
+    if(e.target.classList.contains('clr-btns')) return;
+
+    choosen_bg = e.target.value;
+    isRandom = false;
+})
 const gridVal = document.querySelector("#gridVal");
 gridSize.addEventListener("input", (e) => {
         const sz = e.target.value;
@@ -57,22 +68,6 @@ container.addEventListener("mouseover", (e) => {
     }
 })
 
-// function userInput() {
-//     let gridSize = prompt("please enter the grid size! (<100)");
-//     if(gridSize > 100) return userInput();
-//     return gridSize;
-// }
-
-// const btn = document.querySelector("button");
-
-// btn.addEventListener("click", () => {
-//     const sz = userInput();
-//     boxSize = 800 / sz;
-//     generateGrid(sz);
-
-// })
-
-// random color generator:
 
 function generateColor()
 {
@@ -89,5 +84,5 @@ function generateColor()
     return prefix;
     }
     
-    else return "#FF0000"
+    else return choosen_bg;
 }

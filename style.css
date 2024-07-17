@@ -5,6 +5,17 @@ body
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+header
+{
+    margin-top: 40px;
+}
+h1
+{
+    display: block;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+
+}
 .container
 {
     width: 800px;
@@ -40,7 +51,7 @@ button
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-    margin: 100px;
+    margin: 70px;
     align-items: start;
     gap: 20px;
 }
@@ -115,4 +126,23 @@ span
 
 #opt{
     margin-bottom: 19px;
+}
+
+#red{
+    background-color: red;
+}
+#black{
+    background-color: black;
+}
+#green
+{
+    background-color: green;
+}
+#yellow
+{
+    background-color: yellow;
+}
+#blue
+{
+    background-color: blue;
 }
