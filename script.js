@@ -76,8 +76,7 @@ shadingBtn.addEventListener("click", () => enableShading = !enableShading);
 //getting color options to change default color
 const clr = document.querySelector("#clr");
 
-clr.addEventListener("click", (e) => {
-    if (e.target.classList.contains('clr-btns')) return;
+clr.addEventListener("input", (e) => {
 
     choosen_bg = e.target.value;
     isRandom = false;
