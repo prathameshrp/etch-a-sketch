@@ -3,16 +3,16 @@
     Problem: 
  */
 
-const container = document.querySelector(".container");
-const gridSize = document.querySelector("#gridSize");
-const gridVal = document.querySelector("#gridVal");
+const container = document.querySelector(".container"); //get grid element to perform operation on
+const gridSize = document.querySelector("#gridSize"); //get input to access changed grid value
+const gridVal = document.querySelector("#gridVal"); //get label to display changed grid value
 
-let boxSize = 50;
-let enableShading = false;
-let isRandom = false;
-let choosen_bg = "#000";
+let boxSize = 50; //default div size in px
+let enableShading = false; //progressive darkening effect
+let isRandom = false; // rgb color button
+let choosen_bg = "#000"; //default color chosen 
 
-generateGrid(16);
+generateGrid(16); //default grid generation
 
 gridSize.addEventListener("input", (e) => {
     const sz = e.target.value;
@@ -48,7 +48,7 @@ function generateGrid(gridSize) {
     }
 }
 
-
+//eraser event handler, erases pixels (defaults their background to white)
 const eraser = document.querySelector("#eraser");
 
 eraser.addEventListener("click", (e) => {
@@ -57,6 +57,23 @@ eraser.addEventListener("click", (e) => {
     enableShading = false;
 })
 
+//clear button event handler, clears whole grid and generates new default
+const clear = document.querySelector(".clear");
+
+clear.addEventListener("click", () => {
+    boxSize = 50;
+    generateGrid(16);
+})
+
+
+// toggle buttons event handler to toggle random and shading effect
+const rndmBtn = document.querySelector(".random");
+rndmBtn.addEventListener("click", () => isRandom = !isRandom);
+
+const shadingBtn = document.querySelector(".enable-shading");
+shadingBtn.addEventListener("click", () => enableShading = !enableShading);
+
+//getting color options to change default color
 const clr = document.querySelector("#clr");
 
 clr.addEventListener("click", (e) => {
@@ -64,21 +81,6 @@ clr.addEventListener("click", (e) => {
 
     choosen_bg = e.target.value;
     isRandom = false;
-})
-
-
-const rndmBtn = document.querySelector(".random");
-rndmBtn.addEventListener("click", () => isRandom = !isRandom);
-
-const shadingBtn = document.querySelector(".enable-shading");
-shadingBtn.addEventListener("click", () => enableShading = !enableShading);
-
-
-const clear = document.querySelector(".clear");
-
-clear.addEventListener("click", () => {
-    boxSize = 50;
-    generateGrid(16);
 })
 
 function generateColor() {
