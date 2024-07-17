@@ -7,9 +7,10 @@ const container = document.querySelector(".container");
 const gridSize = document.querySelector("#gridSize");
 const clear = document.querySelector(".clear");
 
-
+const gridVal = document.querySelector("#gridVal");
 gridSize.addEventListener("input", (e) => {
         const sz = e.target.value;
+        gridVal.textContent = `${sz}x${sz}`;
         boxSize = 800 / sz;
         generateGrid(sz);
        
@@ -22,6 +23,8 @@ const rndmBtn = document.querySelector(".random");
 const shadingBtn = document.querySelector(".enable-shading");
 shadingBtn.addEventListener("click", () => enableShading = !enableShading);
 rndmBtn.addEventListener("click", ()=> isRandom = !isRandom);
+
+
 clear.addEventListener("click", () =>
     {
         boxSize = 50;
